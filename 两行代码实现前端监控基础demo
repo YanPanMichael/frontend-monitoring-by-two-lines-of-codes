@@ -1,0 +1,5 @@
+fontend: 
+window.onerror = function(a,b,c,d,e){(new Image).src = `/m?p=${location.href}&a=${a}&b=${b}&c=${c}&d=${d}&e=${e.stack}`}
+
+server:
+tail -f access.log | awk '/m/ {c++; print c, $0} {}'
